@@ -18,11 +18,14 @@ installApplicationForMacWithCask=(
 
 installApplicationForMacWithoutCask=(
     "nmap"
+    "jq"
+    "procs"
+    "tre"
 )
 
 
 installApplicationForLinux=(
-    "wireshark"
+    zsh
 )
 
 # Check for macOS and handle Homebrew
@@ -47,16 +50,26 @@ fi
 
 
 # Check for Ubuntu and package manager (assuming script is intended for Ubuntu)
-if [[ "$(uname -s)" == "Linux" && "${deviceType_lower}" == "ubuntu" ]]; then
+if [[ "$(uname -s)" == "Linux" && $deviceType == "ubuntu" ]]; then
     # Update package lists
     sudo apt update
-
+    sudo apt install curl
+    sudo apt install git
+    
     # Install applications using package manager
     for app in "${installApplication[@]}"; do
         echo "Installing $app..."
-        # sudo apt install -y "$app"
+        sudo apt install -y "$app"
     done
+    
+    # change default shell to zsh
+    chsh -s $(which zsh)
 fi
+
+# 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# echo ZSH_THEME="fino-time" >> ~/.zshrc
+# source ~/.zshrc
 
 # Add similar logic for other systems if needed (e.g., Fedora, CentOS)
 
