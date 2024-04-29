@@ -18,14 +18,14 @@ installApplicationForMacWithCask=(
 
 installApplicationForMacWithoutCask=(
     "nmap"
-    "jq"
-    "procs"
-    "tre"
 )
 
 
 installApplicationForLinux=(
     zsh
+    jq
+    procs
+    tre
 )
 
 # Check for macOS and handle Homebrew
@@ -52,14 +52,14 @@ fi
 # Check for Ubuntu and package manager (assuming script is intended for Ubuntu)
 if [[ "$(uname -s)" == "Linux" && $deviceType == "ubuntu" ]]; then
     # Update package lists
-    sudo apt update
-    sudo apt install curl
-    sudo apt install git
+    apt update
+    apt install curl
+    apt install git
     
     # Install applications using package manager
     for app in "${installApplication[@]}"; do
         echo "Installing $app..."
-        sudo apt install -y "$app"
+        apt install -y "$app"
     done
     
     # change default shell to zsh
