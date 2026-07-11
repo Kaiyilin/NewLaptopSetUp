@@ -1,7 +1,14 @@
 #!/bin/bash
 
 Algo_SD_repo=(
-    "List your repos here"
+    common-datamodel
+    dataaccess
+    studydirect
+    studyconfiggenerator
+    hc-ipp
+    imageworkstation
+    dataentry
+    jboss510
 )
 
 # Available algorithms (modify as needed)
@@ -14,7 +21,7 @@ algorithms=(
 
 # Default algorithm (change index for different default)
 default_index=0
-repo_root="{your_repo_root}"
+repo_root="ssh://git@stash.imgdev.bioclinica.com:7999/sd"
 
 
 # Get user input for algorithm

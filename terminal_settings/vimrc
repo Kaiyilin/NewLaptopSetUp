@@ -1,0 +1,15 @@
+set number
+syntax on
+set cursorline
+set relativenumber
+set showcmd
+
+set bg=dark
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O

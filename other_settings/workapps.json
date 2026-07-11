@@ -1,0 +1,18 @@
+{
+  "go_apps": [
+    "Microsoft Teams",
+    "Reminders",
+    "Obsidian"
+  ],
+  "clock_apps": [
+    "Microsoft Outlook",
+    "Microsoft Teams",
+    "IntelliJ IDEA CE",
+    "Reminders",
+    "Obsidian"
+  ],
+  "_notes": {
+    "Microsoft Outlook": "Excluded from go_apps - recently costs too much memory",
+    "IntelliJ IDEA CE": "Excluded from go_apps - costs too much memory"
+  }
+}
